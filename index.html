@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analyzer</title>
+    <<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Analyzer</h1>
+        <form id="textForm" action="/hatespeech" method="post">
+            <textarea id="inputText" name="text" placeholder="Enter text here..." rows="10" required></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+        <div id="result">
+            {% if result %}
+                <p>Analysis Result: {{ result }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
